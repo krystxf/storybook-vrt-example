@@ -1,7 +1,0 @@
-{
-  "git": {
-    "deploymentEnabled": {
-      "vrt-snapshots": false
-    }
-  }
-}
