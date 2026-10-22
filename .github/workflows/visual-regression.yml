@@ -11,7 +11,8 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
-  contents: write # push diff images to the snapshot branch
+  contents: read # build head and base commits
+  actions: read # retrieve reports for approval checks
   pull-requests: write # upsert the sticky comment
   statuses: write # set the blocking `visual-regression` commit status
 
@@ -32,7 +33,8 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: krystxf/storybook-vrt@v1
+      - uses: krystxf/storybook-vrt@v2
         with:
+          attachment-token: ${{ secrets.VRT_ATTACHMENT_TOKEN }}
           build-command: pnpm build-storybook
           ignore-story-names: "All Variants"
