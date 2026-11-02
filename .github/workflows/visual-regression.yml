@@ -33,7 +33,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: krystxf/storybook-vrt@v2
+      - uses: krystxf/storybook-vrt@v2.1.0
         with:
           attachment-token: ${{ secrets.VRT_ATTACHMENT_TOKEN }}
           build-command: pnpm build-storybook
