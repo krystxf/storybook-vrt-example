@@ -18,7 +18,7 @@ comments can update the report without taking screenshots again.
 
 ## Workflow setup
 
-The [workflow](.github/workflows/visual-regression.yml) uses `krystxf/storybook-vrt@v2`.
+The [workflow](.github/workflows/visual-regression.yml) uses `krystxf/storybook-vrt@v2.1.0`.
 
 1. Create the repository Actions secret `VRT_ATTACHMENT_TOKEN` using a user PAT or OAuth token
    with push access. GitHub App installation tokens, including Actions `GITHUB_TOKEN`, cannot
